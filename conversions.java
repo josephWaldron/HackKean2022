@@ -8,7 +8,7 @@ public class conversions {
         String numb = input.nextLine();
         char[] charArray = charArray(numb);
         Binary numb1 = new Binary(charArray);
-        System.out.println(numb1.toDecimal());
+        System.out.print(numb1.toDecimal());
 
     }
     public static char[] charArray(String userIn){

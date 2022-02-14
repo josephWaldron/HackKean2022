@@ -1,39 +1,35 @@
 public class Binary {
+    //data fields
     char[] numb;
+    //constructor
     public Binary(char[] numb){
-        setNumb(numb);
-    }
-    public char[] getNumb() {
-        return numb;
-    }
-    public void setNumb(char[] numb) {
         this.numb = numb;
     }
+    //conversion methods
     public String toDecimal(){
-        String out;
         int total = 0;
         double[] powers = new double[numb.length];
-        char[] reversed = reverseArray(numb);
-        for (int i = 0; i < powers.length; i++) {
+        char[] reversed = reverseArray(numb);       //reverse array to perform calculations
+        for (int i = 0; i < powers.length; i++) {       //for every element in char[] make an input for 2^i
             powers[i] = Math.pow(2, i);
         }
         for (int i = 0; i < reversed.length; i++) {
             if(reversed[i] == '1'){
-                total += powers[i];
+                total += powers[i];     //if number is 1 add 2^i to total
             }
-            else{
+            else{       //if number is 0 add nothing
                 total += 0;
             }
         }
-        out = String.valueOf(total);
-        return out;
+        String out = String.valueOf(total);
+        return  " in Decimal is " + out;
     }
-    public char[] reverseArray(char[] in){
+    public char[] reverseArray(char[] in){  //take in char[] and reverse it
         char[] reversed = new char[numb.length];
-        int j = numb.length;
+        int temp = numb.length;
         for (int i = 0; i < reversed.length; i++) {
-            reversed[j - 1] = in[i];
-            j = j - 1;
+            reversed[temp - 1] = in[i];
+            temp = temp - 1;
         }
         return reversed;
     }
