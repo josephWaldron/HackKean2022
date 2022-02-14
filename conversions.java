@@ -4,7 +4,7 @@ public class conversions {
     public static void main(String[] args) {
         System.out.println("Number conversions by Joseph Waldron and Moiez Qamar");
         Scanner input = new Scanner(System.in);
-        System.out.println("Enter a number: ");     //get user input
+        System.out.println("Enter a number: ");     //get user input todo: let user select input base
         String numb = input.nextLine();
         char[] charArray = charArray(numb);
         Binary numb1 = new Binary(charArray);

@@ -1,3 +1,4 @@
+//todo create conversions to hex and to octal
 public class Binary {
     //data fields
     char[] numb;
