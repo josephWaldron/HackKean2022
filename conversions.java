@@ -1,5 +1,5 @@
 import java.util.Scanner;
-
+//todo add loop so user doesnt have to restart the program
 public class conversions {
     public static void main(String[] args) {
         System.out.println("Number conversions by Joseph Waldron and Moiez Qamar");
@@ -8,10 +8,10 @@ public class conversions {
         String numb = input.nextLine();
         char[] charArray = charArray(numb);
         Binary numb1 = new Binary(charArray);
-        System.out.print(numb1.toDecimal());
+        System.out.print(numb1.toDecimal());        //calls function to convert Binary number to 
         input.close();
     }
-    public static char[] charArray(String userIn){
+    public static char[] charArray(String userIn){      //changes user input into char array
         int length = userIn.length(); 
         char[] array = new char[length];
         for (int i = 0; i < length; i++) {
