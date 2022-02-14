@@ -9,7 +9,7 @@ public class conversions {
         char[] charArray = charArray(numb);
         Binary numb1 = new Binary(charArray);
         System.out.print(numb1.toDecimal());
-
+        input.close();
     }
     public static char[] charArray(String userIn){
         int length = userIn.length(); 
