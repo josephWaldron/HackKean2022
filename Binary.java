@@ -23,7 +23,20 @@ public class Binary {
             }
         }
         String out = String.valueOf(total);
-        return  " in Decimal is " + out;
+        System.out.println(out);
+        return String.valueOf(total);
+    }
+    public String toOctal(){
+        boolean multOfThree = false;        //this code sign extends the binary input
+        char signExtended[] = new char[numb.length + 2];
+        while(multOfThree = false){
+            if((signExtended.length) % 3 == 1){
+                
+            } 
+        }
+
+        
+        return  " in Octal";
     }
     public char[] reverseArray(char[] in){  //take in char[] and reverse it
         char[] reversed = new char[numb.length];
@@ -33,9 +46,5 @@ public class Binary {
             temp = temp - 1;
         }
         return reversed;
-    }
-    @Override
-    public String toString() {
-        return "Binary number: " + numb.toString();
     }
 }
