@@ -29,10 +29,10 @@ public class Binary {
     public String toOctal(){
         boolean multOfThree = false;        //this code sign extends the binary input
         char signExtended[] = new char[numb.length + 2];
-        for (int i = 0; i < numb.length; i++) {
-            System.out.print(numb[i]);
-        }
-        System.out.println();
+        // for (int i = 0; i < numb.length; i++) {
+        //     System.out.print(numb[i]);
+        // }
+        // System.out.println();
         while(multOfThree == false){
             if((numb.length) % 3 == 1){
               signExtended[0] = '0'; 
@@ -60,10 +60,10 @@ public class Binary {
                 multOfThree = true;
             }
         }
-        for (int i = 0; i < signExtended.length; i++) {
-            System.out.print(signExtended[i]);
-        }
-        int[] baseEight = {4,2,1};
+        // for (int i = 0; i < signExtended.length; i++) {
+        //     System.out.print(signExtended[i]);
+        // }
+        int[] baseEight = {4,2,1};      //this code splits the binary input into groups of 3 and finds the octal digit
         char[] answer = new char[signExtended.length / 3];
         int globalHead = 0;
         int globalAdd = 0;
