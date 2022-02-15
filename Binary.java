@@ -29,14 +29,62 @@ public class Binary {
     public String toOctal(){
         boolean multOfThree = false;        //this code sign extends the binary input
         char signExtended[] = new char[numb.length + 2];
-        while(multOfThree = false){
-            if((signExtended.length) % 3 == 1){
-                
-            } 
+        for (int i = 0; i < numb.length; i++) {
+            System.out.print(numb[i]);
         }
-
+        System.out.println();
+        while(multOfThree == false){
+            if((numb.length) % 3 == 1){
+              signExtended[0] = '0'; 
+              signExtended[1] = '0';
+              int j = 0;
+              for (int i = 2; i < signExtended.length; i++) {
+                  signExtended[i] = numb[j];
+                  j++;
+              }
+              multOfThree = true;
+            }
+            else if((numb.length) % 3 == 2){
+                signExtended[0] = '0';
+                int j = 0;
+                for (int i = 1; i < signExtended.length - 1; i++) {
+                    signExtended[i] = numb[j];
+                    j++;
+                }
+                multOfThree = true;
+            }
+            else {
+                for (int i = 0; i < numb.length; i++) {
+                    signExtended[i] = numb[i];
+                }
+                multOfThree = true;
+            }
+        }
+        for (int i = 0; i < signExtended.length; i++) {
+            System.out.print(signExtended[i]);
+        }
+        int[] baseEight = {4,2,1};
+        char[] answer = new char[signExtended.length / 3];
+        int globalHead = 0;
+        int globalAdd = 0;
+        int j = 0;
+        for (int i = 0; i < signExtended.length / 3; i++) {
+            while(j < 3){
+                if(signExtended[globalHead] == '1'){
+                    globalAdd +=  baseEight[j];
+                    globalHead ++;
+                    j++;
+                }
+                else {
+                    globalHead ++;
+                    j++;}
+            }
+            answer[i] = (char)(globalAdd + '0');
+            globalAdd = 0;
+            j = 0;
+        }
         
-        return  " in Octal";
+        return  String.valueOf(answer);
     }
     public char[] reverseArray(char[] in){  //take in char[] and reverse it
         char[] reversed = new char[numb.length];
