@@ -17,11 +17,18 @@ public class conversions {
         // System.out.println("\n" + numOctalObj.toOctal());
 
         //to hex
-        String numHex = "101101101101010101010101010111";
+        String numHex = "1234567";
+        // numHex = numHex.toUpperCase();
         char[] hexArray = charArray(numHex);
-        Binary numHexObj = new Binary(hexArray);
-        System.out.println(numHexObj.toHex());
+        // Binary numHexObj = new Binary(hexArray);
+        // System.out.println(numHexObj.toHex());
         // input.close();
+        toBinary obj1 = new toBinary(hexArray, "Base 8");
+        String[] output = obj1.doBinary();
+        for (int i = 0; i < output.length; i++) {
+            System.out.print(output[i] + " ");
+        }
+        
     }
     public static char[] charArray(String userIn){      //changes user input into char array
         int length = userIn.length(); 
