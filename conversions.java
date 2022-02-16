@@ -28,6 +28,10 @@ public class conversions {
         for (int i = 0; i < output.length; i++) {
             System.out.print(output[i] + " ");
         }
+        System.out.println();
+        System.out.println(String.valueOf(octalCharArray(output)));
+        Binary test = new Binary(octalCharArray(output));
+        System.out.println(test.toHex());
         
     }
     public static char[] charArray(String userIn){      //changes user input into char array
@@ -35,6 +39,36 @@ public class conversions {
         char[] array = new char[length];
         for (int i = 0; i < length; i++) {
             array[i] = userIn.charAt(i);
+        }
+        return array;
+    }
+    public static char[] octalCharArray(String[] input){
+        int length = input.length * 3;
+        char[] array = new char[length];
+        int j = 0;
+        for (int i = 0; i < input.length; i++) {
+            array[j] = input[i].charAt(0);
+            j++;
+            array[j] = input[i].charAt(1);
+            j++;
+            array[j] = input[i].charAt(2);
+            j++;
+        }
+        return array;
+    }
+    public static char[] hexCharArray(String[] input){
+        int length = input.length * 4;
+        char[] array = new char[length];
+        int j = 0;
+        for (int i = 0; i < input.length; i++) {
+            array[j] = input[i].charAt(0);
+            j++;
+            array[j] = input[i].charAt(1);
+            j++;
+            array[j] = input[i].charAt(2);
+            j++;
+            array[j] = input[i].charAt(3);
+            j++;
         }
         return array;
     }

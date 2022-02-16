@@ -2,7 +2,6 @@
 
 public class toBinary {
     char[] numbs;
-    String[] binary;
     String convertFrom;
 
     public toBinary(char[] numbs,String convertFrom){
