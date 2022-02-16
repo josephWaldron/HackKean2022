@@ -1,4 +1,4 @@
-import java.util.Scanner;
+// import java.util.Scanner;
 //todo add loop so user doesnt have to restart the program
 public class conversions {
     public static void main(String[] args) {
@@ -11,11 +11,16 @@ public class conversions {
         // System.out.print(numb1.toDecimal());        //calls function to convert Binary number to 
 
         //to octal
-        String numoctal = "01001100101";
-        char[] octalArray = charArray(numoctal);
-        Binary numOctalObj = new Binary(octalArray);
-        System.out.println("\n" + numOctalObj.toOctal());
+        // String numoctal = "1";
+        // char[] octalArray = charArray(numoctal);
+        // Binary numOctalObj = new Binary(octalArray);
+        // System.out.println("\n" + numOctalObj.toOctal());
 
+        //to hex
+        String numHex = "101101101101010101010101010111";
+        char[] hexArray = charArray(numHex);
+        Binary numHexObj = new Binary(hexArray);
+        System.out.println(numHexObj.toHex());
         // input.close();
     }
     public static char[] charArray(String userIn){      //changes user input into char array

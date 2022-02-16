@@ -86,6 +86,94 @@ public class Binary {
         
         return  String.valueOf(answer);
     }
+    // to hex
+    public String toHex(){
+        boolean multOfFour = false;     //sign extending
+        char signExtended[] = new char[numb.length + 3];
+        while(multOfFour == false){
+            if((numb.length) % 4 == 1){
+                signExtended[0] = '0'; 
+                signExtended[1] = '0';
+                signExtended[2] = '0';
+                int j = 0;
+                for (int i = 3; i < signExtended.length; i++) {
+                    signExtended[i] = numb[j];
+                    j++;
+                }
+                multOfFour = true;
+            }
+            else if((numb.length) % 4 == 2){
+                signExtended[0] = '0'; 
+                signExtended[1] = '0';
+                int j = 0;
+                for (int i = 2; i < signExtended.length - 1; i++) {
+                    signExtended[i] = numb[j];
+                    j++;
+                }
+                multOfFour = true;
+            }
+            else if((numb.length) % 4 == 3){
+                signExtended[0] = '0';
+                int j = 0;
+                for (int i = 1; i < signExtended.length - 2; i++) {
+                    signExtended[i] = numb[j];
+                    j++;
+                }
+                multOfFour = true;
+            }
+            else {
+                for (int i = 0; i < numb.length; i++) {
+                    signExtended[i] = numb[i];
+                }
+                multOfFour = true;
+            }
+        }
+        // calculations
+        int[] baseSixteen = {8,4,2,1};
+        char answer[] = new char[signExtended.length / 4];
+        int globalHead = 0;
+        int globalAdd = 0;
+        int j = 0;
+        for (int i = 0; i < signExtended.length / 4; i++) {
+            while(j < 4){
+                if(signExtended[globalHead] == '1'){
+                    globalAdd += baseSixteen[j];
+                    globalHead ++;
+                    j++;
+                }
+                else{
+                    globalHead ++;
+                    j++;
+                }
+            }
+            if(globalAdd > 9){
+                if(globalAdd == 10){
+                    answer[i] = 'A'; 
+                }
+                else if(globalAdd == 11){
+                    answer[i] = 'B';
+                }
+                else if(globalAdd == 12){
+                    answer[i] = 'C';
+                }
+                else if(globalAdd == 13){
+                    answer[i] = 'D';
+                }
+                else if(globalAdd == 14){
+                    answer[i] = 'E';
+                }
+                else if(globalAdd == 15){
+                    answer[i] = 'F';
+                }
+            }
+            else{
+                answer[i] = (char)(globalAdd + '0');
+            }
+            globalAdd = 0;
+            j = 0;
+        }
+        return String.valueOf(answer);
+    }
     public char[] reverseArray(char[] in){  //take in char[] and reverse it
         char[] reversed = new char[numb.length];
         int temp = numb.length;
