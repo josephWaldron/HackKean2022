@@ -174,6 +174,9 @@ public class Binary {
         }
         return String.valueOf(answer);
     }
+    public String toBinary(){
+        return String.valueOf(numb);
+    }
     public char[] reverseArray(char[] in){  //take in char[] and reverse it
         char[] reversed = new char[numb.length];
         int temp = numb.length;
