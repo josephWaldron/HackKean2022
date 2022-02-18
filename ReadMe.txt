@@ -6,6 +6,6 @@ Or click on the path search bar in the HackKean 2022 folder and type "cmd"
 to open a command prompt window***windows only must have at least java 1.4.0 installed**
 Then in the command prompt type "java -jar --enable-preview HackKean2022.jar"
 
-choose your conversion facors, type in a value and then press enter.
-**if you cant see the resulst try making the window bigger**
+choose your conversion factors, type in a value and then press enter.
+**if you cant see the results try making the window bigger**
 Enjoy our program!
