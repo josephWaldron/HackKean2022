@@ -102,42 +102,51 @@ public class FromBinary {
 
     // to hex
     public String toHex(){
+        String full="";
+        for(int i =0; i<numb.length;i++){
+            full+=numb[i];
+        }
+        String []xx = new String[full.length()];
+        for (int i = 0; i < full.length(); i++) {
+            xx[i] = String.valueOf(full.charAt(i));
+        }
+
         boolean multOfFour = false;     //sign extending
-        String signExtended[] = new String[numb.length + 3];
+        String signExtended[] = new String[xx.length + 3];
         while(multOfFour == false){
-            if((numb.length) % 4 == 1){
+            if((xx.length) % 4 == 1){
                 signExtended[0] = "0";
                 signExtended[1] = "0";
                 signExtended[2] = "0";
                 int j = 0;
                 for (int i = 3; i < signExtended.length; i++) {
-                    signExtended[i] = numb[j];
+                    signExtended[i] = xx[j];
                     j++;
                 }
                 multOfFour = true;
             }
-            else if((numb.length) % 4 == 2){
+            else if((xx.length) % 4 == 2){
                 signExtended[0] = "0";
                 signExtended[1] = "0";
                 int j = 0;
                 for (int i = 2; i < signExtended.length - 1; i++) {
-                    signExtended[i] = numb[j];
+                    signExtended[i] = xx[j];
                     j++;
                 }
                 multOfFour = true;
             }
-            else if((numb.length) % 4 == 3){
+            else if((xx.length) % 4 == 3){
                 signExtended[0] = "0";
                 int j = 0;
                 for (int i = 1; i < signExtended.length - 2; i++) {
-                    signExtended[i] = numb[j];
+                    signExtended[i] = xx[j];
                     j++;
                 }
                 multOfFour = true;
             }
             else {
-                for (int i = 0; i < numb.length; i++) {
-                    signExtended[i] = numb[i];
+                for (int i = 0; i < xx.length; i++) {
+                    signExtended[i] = xx[i];
                 }
                 multOfFour = true;
             }
