@@ -83,7 +83,9 @@ public class RunMe extends JPanel  implements ActionListener{
         c.insets = new Insets(10,0,0,0);
         lab = new JLabel("Results:", SwingConstants.CENTER);
         c.fill = GridBagConstraints.HORIZONTAL;
-        c.gridx = 1;
+        c.gridx = 0;
+        c.gridwidth = 3;
+
         c.gridy = 2;
         lab.setFont(lab.getFont().deriveFont(Font.BOLD, 14f));
 
@@ -126,7 +128,7 @@ public class RunMe extends JPanel  implements ActionListener{
 
 
     private static void createAndShowGUI() {
-        JFrame frame = new JFrame("Number RunMes by Joseph Waldron and Moiez Qamar");
+        JFrame frame = new JFrame("Number conversions by Joseph Waldron and Moiez Qamar");
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         pane = frame.getContentPane();
         new RunMe();
